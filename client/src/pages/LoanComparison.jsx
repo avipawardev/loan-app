@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { calcMonthlyPayment, calculateTotalPayment } from '../utils/calculator.jsx';
 import Navbar from '../components/Navbar.jsx';
 import Footer from '../components/Footer.jsx';
+import { apiCall } from '../config/api.js';
 
 const LoanComparison = () => {
   const [loanOptions, setLoanOptions] = useState([]);
@@ -24,7 +25,7 @@ const LoanComparison = () => {
 
   const fetchLoanOptions = async () => {
     try {
-      const response = await fetch('/api/loans/options');
+      const response = await apiCall('/api/loans/options');
       if (response.ok) {
         const data = await response.json();
         setLoanOptions(data);

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Toast from '../components/Toast.jsx';
+import { apiCall } from '../config/api.js';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/auth/login', {
+      const response = await apiCall('/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

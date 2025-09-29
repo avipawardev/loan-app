@@ -1,4 +1,5 @@
 import React from 'react';
+import { apiCall } from '../config/api.js';
 
 const PaymentSummaryModal = ({ isOpen, onClose, paymentData }) => {
   if (!isOpen || !paymentData) return null;
@@ -29,7 +30,7 @@ const PaymentSummaryModal = ({ isOpen, onClose, paymentData }) => {
 
   const handlePayNow = async () => {
     try {
-      const response = await fetch(`/api/payments/${paymentData._id}/pay`, {
+      const response = await apiCall(`/api/payments/${paymentData._id}/pay`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,

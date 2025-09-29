@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Toast from '../components/Toast.jsx';
+import { apiCall } from '../config/api.js';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -13,7 +14,7 @@ const ForgotPassword = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/auth/forgot-password', {
+      const response = await apiCall('/api/auth/forgot-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

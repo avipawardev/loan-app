@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar.jsx';
 import Footer from '../components/Footer.jsx';
 import Toast from '../components/Toast.jsx';
+import { apiCall } from '../config/api.js';
 
 const LoanDetails = () => {
   const { id } = useParams();
@@ -16,7 +17,7 @@ const LoanDetails = () => {
 
   const fetchLoanDetails = async () => {
     try {
-      const response = await fetch(`/api/loans/${id}`, {
+      const response = await apiCall(`/api/loans/${id}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }

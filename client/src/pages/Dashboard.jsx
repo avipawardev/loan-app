@@ -4,6 +4,7 @@ import LoanCard from '../components/LoanCard.jsx';
 import Toast from '../components/Toast.jsx';
 import Navbar from '../components/Navbar.jsx';
 import Footer from '../components/Footer.jsx';
+import { apiCall } from '../config/api.js';
 
 const Dashboard = () => {
   const [loans, setLoans] = useState([]);
@@ -22,7 +23,7 @@ const Dashboard = () => {
         return;
       }
 
-      const response = await fetch('/api/loans', {
+      const response = await apiCall('/api/loans', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'

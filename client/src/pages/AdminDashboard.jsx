@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Toast from '../components/Toast.jsx';
+import { apiCall } from '../config/api.js';
 
 const AdminDashboard = () => {
   const [loans, setLoans] = useState([]);
@@ -15,7 +16,7 @@ const AdminDashboard = () => {
 
   const fetchLoans = async () => {
     try {
-      const response = await fetch('/api/admin/loans', {
+      const response = await apiCall('/api/admin/loans', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
           'Content-Type': 'application/json'
@@ -43,7 +44,7 @@ const AdminDashboard = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch('/api/admin/users', {
+      const response = await apiCall('/api/admin/users', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -60,7 +61,7 @@ const AdminDashboard = () => {
 
   const updateLoanStatus = async (loanId, status) => {
     try {
-      const response = await fetch(`/api/admin/loans/${loanId}`, {
+      const response = await apiCall(`/api/admin/loans/${loanId}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,

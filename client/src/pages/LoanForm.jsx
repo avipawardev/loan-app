@@ -6,6 +6,7 @@ import Footer from '../components/Footer.jsx';
 import { validateRequired, validateAmount, validateEmail, validateIncome } from '../utils/validators.jsx';
 import { calcMonthlyPayment } from '../utils/calculator.jsx';
 import { useNavigate } from 'react-router-dom';
+import { apiCall } from '../config/api.js';
 
 const LoanForm = () => {
   const navigate = useNavigate()
@@ -65,7 +66,7 @@ const LoanForm = () => {
     if (!validateStep(3)) return;
     
     try {
-      const response = await fetch('/api/loans/apply', {
+      const response = await apiCall('/api/loans/apply', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,

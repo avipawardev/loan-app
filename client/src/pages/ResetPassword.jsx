@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useSearchParams } from 'react-router-dom';
 import Toast from '../components/Toast.jsx';
+import { apiCall } from '../config/api.js';
 
 const ResetPassword = () => {
   const [searchParams] = useSearchParams();
@@ -46,7 +47,7 @@ const ResetPassword = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/auth/reset-password', {
+      const response = await apiCall('/api/auth/reset-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -3,6 +3,7 @@ import Calendar from 'react-calendar';
 import PaymentSummaryModal from '../components/PaymentSummaryModal.jsx';
 import Navbar from '../components/Navbar.jsx';
 import Footer from '../components/Footer.jsx';
+import { apiCall } from '../config/api.js';
 
 const RepaymentCalendar = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -24,7 +25,7 @@ const RepaymentCalendar = () => {
 
   const fetchLoans = async () => {
     try {
-      const response = await fetch('/api/loans', {
+      const response = await apiCall('/api/loans', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -44,7 +45,7 @@ const RepaymentCalendar = () => {
 
   const fetchPayments = async (loanId) => {
     try {
-      const response = await fetch(`/api/payments/${loanId}`, {
+      const response = await apiCall(`/api/payments/${loanId}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
