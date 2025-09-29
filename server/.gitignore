@@ -16,4 +16,4 @@ yarn-error.log*
 # NODE_ENV=production
 # EMAIL_USER=avipawar.dev@gmail.com
 # EMAIL_PASS=lyrrrlqzrpyxqkwd
-# CLIENT_URL=https://your-frontend-domain.vercel.app
+# CLIENT_URL=https://loan-app-xi-eight.vercel.app
