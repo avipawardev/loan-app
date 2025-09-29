@@ -11,9 +11,9 @@ yarn-error.log*
 
 
 
-MONGODB_URI=mongodb+srv://avipawardev:M7ObGYtbIsrWEDA3@loanapp.y6yuqcj.mongodb.net/?retryWrites=true&w=majority&appName=LoanApp
-JWT_SECRET=myjwtsecret
-NODE_ENV=production
-EMAIL_USER=avipawar.dev@gmail.com
-EMAIL_PASS=lyrrrlqzrpyxqkwd
-CLIENT_URL=https://your-frontend-domain.vercel.app
+# MONGODB_URI=mongodb+srv://avipawardev:M7ObGYtbIsrWEDA3@loanapp.y6yuqcj.mongodb.net/?retryWrites=true&w=majority&appName=LoanApp
+# JWT_SECRET=myjwtsecret
+# NODE_ENV=production
+# EMAIL_USER=avipawar.dev@gmail.com
+# EMAIL_PASS=lyrrrlqzrpyxqkwd
+# CLIENT_URL=https://your-frontend-domain.vercel.app
