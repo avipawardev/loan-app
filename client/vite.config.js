@@ -7,7 +7,10 @@ export default defineConfig({
   root: '.',
   publicDir: 'public',
   server: {
-    port: 5173
+    port: 5173,
+    proxy: {
+      '/api': 'https://loan-app-kohg.onrender.com'
+    }
   },
   build: {
     outDir: 'dist'
